@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div class="container">
+	<div class="form header">
+    <div class="logo">
+    	<i class="fas fa-user-sheild"></i>
+    	<span>SecureSignUp</span>
+    </div>
+		<h1>Create your Account</h1>
+		<div class="progress-steps">
+			<div class="step active">1</div>
+			<div class="step">2</div>
+			<div class="step">3</div>
+		</div>
+	</div>
+	<form id="registrationForm" action="/submit" method="POST">
+		<div class="form-body">
+			<div class="form-section">
+				<h2><i class="fas fa-user"></i> Persnol Information</h2>
+				<div class="form-group dual-input">
+					<div class="input-col">
+				<label for="First Name">First Name*</label>
+				<input type="text" id="firstName" name="firstName" required placeholder="Abdullah">
+				<div class="error-message">Please Enter Your first name</div>
+			</div>
+			<div class="input-col">
+				<label for="lastName">Last Name*</label>
+				<input type="text" id="lastName" name="lastName" required placeholder="Rajpot">
+				<div class="error-message">Please Enter Your last name</div>
+			</div>
+			</div>
+            <div class="form-group">
+				<label for="email">Email Address*</label>
+				<div class="input-wrapper">
+					<i class="fas fa-envelop input-icon"></i>
+				<input type="email" id="eamil" name="email" required placeholder="abdullahrajpot.2007@example.com">
+			</div>
+				<div class="error-message">Please Enter a valid email address</div>
+			</div>
+			<div class="form-group dual-input">
+				<div class="input-col">
+					<label for="dob">Date of Birth*</label>
+					<input type="Date" id="dob" name="dob" required>
+					<div class="error-message">Please enter your date of birth</div>
+				</div>
+				<div class="input-col">
+            	<label for="gender">Gender</label>
+            	<select id="gender" name="gender">
+            		<option value="">Select</option>
+            		<option value="Male">Male</option>
+            		<option value="FeMale">FeMale</option>
+            		<option value="Other">Other</option>
+            		<option value="prefer-not-to-say">Prefer not to say</option>
+            	</select>
+            </div>
+        </div>
+    </div>
+
+            <div class="form-section">
+            	<h2><i class="fas fa-lock"></i> Security Information</h2>
+            	<div class="form-group">
+				<label for="password">Password*</label>
+				<div class="input-wrapper">
+		        <i class="fas fa-key input-icon"></i>
+				<input type="password" id="password" name="password" required minlength="8" placeholder="At least 8 charcters">
+				<i class="fas fa-eye password-toggle"></i>
+			</div>
+			<div class="password-hint">
+				<div class="strength-meter">
+					<div class="strength-bar"></div>
+				</div>
+				<ul class="password-rules">
+					<li><i class="fas fa-check"></i> At least 8 characters</li>
+					<li><i class="fas fa-check"></i> One uppercase letter</li>
+					<li><i class="fas fa-check"></i> One number</li>
+				</ul>
+			</div>
+			<div class="error-message">Password must be at least 8 characters</div>
+		</div>
+
+		<div class="form-group">
+			<label for="confirmpassword">Confirm Password*</label>
+			<div class="input-wrapper">
+				<i class="fas fa-key input-icon"></i>
+				<input type="password" id="confirmpassword" name="confirmpassword" required placeholder="Confirm your password">
+					<i class="fas fa-eye password-toggle"></i>
+			</div>
+			<div class="error-message">Password do not match</div>
+		</div>
+		</div>
+		<div class="form-section">
+			<h2><i class="fas fa-address-card"></i>Contact Information</h2>
+			<div class="form-group">
+				<label for="phone">Phone Number*</label>
+				<div class="input-wrapper">
+					<i class="fas fa-phone input-icon"></i>
+				<input type="tel" id="phone" name="phone" pattern="[\d\s\-()+]{10,}" placeholder="+1 (123) 456-7890">
+			</div>
+				<div class="error-message">Please Enter a valid phone number</div>
+			</div>
+			<div class="form-group">
+				<label for="address">Address*</label>
+				<div class="input-wrapper">
+					<i class="fas fa-map-marker-alt input-icon"></i>
+					<input type="text" id="address" name="address" placeholder="street address">
+				</div>
+			</div>
+            
+            </div>
+            <div class="form-group dual-input">
+            	<div class="input-col">
+            	<label for="city">City</label>
+            	<input type="text" id="city" name="city" placeholder="city">
+            </div>
+            <div class="input-col">
+            	<label for="zip">Zip Code</label>
+            	<input type="text" id="zip" name="zip" placeholder="ZIP">
+            </div>
+        </div>
+
+                <div class="form-group">
+                <label for="country">Country*</label>       
+            	<select id="country" name="country" required>
+            		<option value="">Select Country</option>
+            		<option value="US">United States</option>
+            		<option value="CA">Canada</option>
+            		<option value="UK">United Kingdom</option>
+            		<option value="AU">Australia</option>
+            		<option value="PA">Pakistan</option>
+            		<option value="IN">India</option>
+            		<option value="JP">Japan</option>
+            		<option value="DE">Germany</option>
+            		<option value="FR">France</option>
+            	</select>
+                <div class="error-message">Please select your country</div>
+            </div>
+        </div>
+
+            <div class="form-section">
+            	<h2><i class="fas fa-clipboard-check">Terms & Preferences</i></h2>
+            	<div class="form-group full-width">
+            	<div class="terms-container">
+            		<input type="checkbox" id="terms" name="terms" required>
+            		<label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy policy</a></label>
+                </div>
+                <div class="error-message">You must accept the terms and conditions</div>
+            </div>
+            <div class="form-group full-width">
+            	<div class="terms-container">
+            		<input type="checkbox" id="newsletter" name="newsletter" checked>
+            		<label for="newsletter">Subscribe to our newsletter for updates and offers</label>
+            	</div>
+            </div>
+            <div class="form-group full-width">
+            	<div class="terms-container">
+            		<input type="checkbox" id="marketing" name="marketing">
+            	<label for="marketing">Receive marketing communications from our partners</label>
+            </div>
+        </div>
+    </div>
+</div>
+       <div class="form-footer">
+        <button type="submit" class="submit-btn">
+        	<i class="fas fa-user-plus"></i>Create Account
+        </button>
+        <p class="login-link">Already have an account? <a href="#">Log in</a></p>
+        <div class="social-login">
+        	<p>Or sign up with:</p>
+        	<div class="social-icons">
+        		<a href="#" class="social-btn google"><i class="fab fa-google"></i></a>
+        		<a href="#" class="social-btn facebook"><i class="fab fa-facebook"></i></a>
+        		<a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i></a>
+        	</div>
+        </div>
+    </div>
+    </form>
+</div>
+</body>
+</html>
